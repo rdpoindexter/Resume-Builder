@@ -6,18 +6,21 @@ db = boto3.resource('dynamodb')
 def lambda_handler(event, context):
     table = db.Table('VisitorCount')
 
-    response = table.put_item(
-        Item={'Visitor': '3'})
-
+    response = table.update_item(
+        Key={'Visitor': 2 },
+        UpdateExpression= 'ADD V :inc',
+        ExpressionAttributeValues={':inc':1}
+        )
 
 def lambda_handler(event, context):
     table = db.Table('VisitorCount')
-
-    response = table.update_item(
+    
+    response = table.get_item(
         Key={'Visitor': 2 },
-        UpdateExpression= 'ADD Vcount :inc',
-        ExpressionAttributeValues={':inc':1}
+    ProjectionExpression = 'V'
         )
+        
+    return response
 
 
 

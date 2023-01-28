@@ -217,7 +217,34 @@
     </div>
     <script>
         feather.replace()
-      </script>
+    </script>
+    <div>
+        <h2 id="Count"></h2>
+    </div>
 </body>
-<script src = "script.js"></script>
+<script>
+
+document.addEventListener('DOMContentLoaded', myfunction)
+
+function myfunction(){
+
+fetch('https://jxok1dkc2c.execute-api.us-east-1.amazonaws.com/buildresume',
+    {method: 'POST',})
+    .catch(error => console.log('error'))
+}
+
+fetch('https://jxok1dkc2c.execute-api.us-east-1.amazonaws.com/count')
+    .then(response => response.json())
+    .then(data => console.log(data));
+    //displayCount(data)
+
+//function displayCount(data) {
+
+ //   const count = data.Item[0];
+//    document.getElementById("Count").innerHTML=data.Item.V
+//}
+
+    document.getElementById("Count").innerHTML=data.Item;
+    //console.log(response.Item.V);
+</script>
 </html>
