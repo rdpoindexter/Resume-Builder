@@ -234,7 +234,7 @@ fetch('https://jxok1dkc2c.execute-api.us-east-1.amazonaws.com/buildresume',
 
 fetch('https://jxok1dkc2c.execute-api.us-east-1.amazonaws.com/count')
     .then(response => response.json())
-    .then(data => document.getElementById("Count").innerHTML=data.Item.V)
+    .then(data => document.getElementById("Count").innerHTML=data.Item.Vcount)
     .catch(error => console.log('error'));
 </script>
 </html>
