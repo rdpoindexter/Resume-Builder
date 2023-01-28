@@ -223,7 +223,6 @@
     </div>
 </body>
 <script>
-
 document.addEventListener('DOMContentLoaded', myfunction)
 
 function myfunction(){
@@ -235,19 +234,7 @@ fetch('https://jxok1dkc2c.execute-api.us-east-1.amazonaws.com/buildresume',
 
 fetch('https://jxok1dkc2c.execute-api.us-east-1.amazonaws.com/count')
     .then(response => response.json())
-    .then(data => document.getElementById("Count").innerHTML=data.Item)
+    .then(data => document.getElementById("Count").innerHTML=data.Item.V)
     .catch(error => console.log('error'));
-    //displayCount(data)
-
-    //var content = data.Item.V;
-    //("Count").append(content)
-//function displayCount(data) {
-
- //   const count = data.Item[0];
-//    document.getElementById("Count").innerHTML=data.Item.V
-//}
-
-   // document.getElementById("Count").innerHTML=data.Item;
-    //console.log(response.Item.V);
 </script>
 </html>
